@@ -1,0 +1,8 @@
+<h1>Ritly Preview</h1>
+
+<div>
+	Your code is: <%= @link.ritly_url %>
+</div>
+<div>
+	Go to <%= link_to "localhost:3000/go/#{@link.ritly_url}", "/go/#{@link.ritly_url}", method: :patch %> to visit your URL
+</div>

@@ -1,0 +1,12 @@
+
+
+<h1>Ritl Me This</h1>
+
+<div>
+<%= form_for :link, url: "/go", method: :post do |f| %>
+    <%= f.label " http://" %>
+    <%= f.text_field :full_url, placeholder: "www.domain.com" %>
+    
+    <%= f.submit "Ritlyize", class: "btn btn-primary" %>
+<% end %>
+</div>
