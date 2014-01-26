@@ -4,6 +4,11 @@ class LinksController < ApplicationController
 
 	end
 
+	def view
+		@links = Link.all
+		render :view
+	end
+
 	def create
 		long_link = params[:link][:full_url]
 		if long_link.split("//").first == "http:"
@@ -27,6 +32,8 @@ class LinksController < ApplicationController
 		ritl = params[:ritlyurl]
 		@link = Link.where(ritly_url: ritl).first
 
+		# @page_preview = OpenGraph.fetch("#{@link.full_url}")
+
 		render :show
 	end
 
@@ -38,6 +45,12 @@ class LinksController < ApplicationController
 
 		redirect_to "#{link.full_url}"
 
+	end
+
+	def destroy
+		id = params[:id]
+		Link.destroy(id)
+		redirect_to "/view"
 	end
 
 
