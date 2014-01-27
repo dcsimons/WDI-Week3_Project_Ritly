@@ -32,8 +32,6 @@ class LinksController < ApplicationController
 		ritl = params[:ritlyurl]
 		@link = Link.where(ritly_url: ritl).first
 
-		# @page_preview = OpenGraph.fetch("#{@link.full_url}")
-
 		render :show
 	end
 

@@ -4,13 +4,15 @@
 <div class="container preview-display">
 
 	<div>
-		Your Ritly is: <%= link_to "#{@link.ritly_url}", "/go/#{@link.ritly_url}", method: :patch, class: "bolden" %>
+		Your Ritly is: <%= link_to "#{@link.ritly_url}", "/go/#{@link.ritly_url}", method: :patch, class: "bolden ritl-font" %>
 	</div>
 	<div>
 		Number of visits: <%= @link.visits %>
 	</div>
 	<div>
-		Go to <%= link_to "#{@link.ritly_url}", "/go/#{@link.ritly_url}", method: :patch, class: "bolden" %> to visit your URL
+		Go to <%= link_to "#{@link.ritly_url}", "/go/#{@link.ritly_url}", method: :patch, class: "bolden ritl-font" %> to visit your URL
 	</div>
-	<!-- <#%= image_tag "#{@page_preview.image}", class: "fragment" %> -->
+	<div>
+		<iframe class="fragment" src=<%= "#{@link.full_url}" %>></iframe>
+	</div>
 </div>
